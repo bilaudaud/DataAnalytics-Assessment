@@ -77,9 +77,7 @@ Estimate each customer’s lifetime value using account tenure and their total i
 1. Aggregated the number of inflow transactions (`confirmed_amount > 0`) and their total value (converted from kobo to naira).
 2. Calculated tenure in months using `PERIOD_DIFF()` between `CURDATE()` and `users_customuser.date_joined`.
 3. Used the CLV formula:
-  $$
-\text{CLV} = \left( \frac{\text{total\_transactions}}{\text{tenure}} \right) \times 12 \times \text{avg\_profit\_per\_transaction}
-$$
+$\text{CLV} = \left( \frac{\text{total\_transactions}}{\text{tenure}} \right) \times 12 \times \text{avg\_profit\_per\_transaction}$
 
 4. Calculated `avg_profit_per_transaction` as 0.1% of the average transaction value.
 5. Ordered customers by `estimated_clv` from highest to lowest.
