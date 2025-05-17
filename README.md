@@ -77,9 +77,10 @@ Estimate each customer’s lifetime value using account tenure and their total i
 1. Aggregated the number of inflow transactions (`confirmed_amount > 0`) and their total value (converted from kobo to naira).
 2. Calculated tenure in months using `PERIOD_DIFF()` between `CURDATE()` and `users_customuser.date_joined`.
 3. Used the CLV formula:
-   \[
-   \text{CLV} = \left( \frac{\text{total_transactions}}{\text{tenure}} \right) \times 12 \times \text{avg_profit_per_transaction}
-   \]
+  $$
+\text{CLV} = \left( \frac{\text{total\_transactions}}{\text{tenure}} \right) \times 12 \times \text{avg\_profit\_per\_transaction}
+$$
+
 4. Calculated `avg_profit_per_transaction` as 0.1% of the average transaction value.
 5. Ordered customers by `estimated_clv` from highest to lowest.
 
@@ -104,11 +105,3 @@ CTEs, `PERIOD_DIFF`, aggregation, profit formula, rounding, and sorting.
 
 **Recommendation:**
 Introduce personalized savings goals or usage reminders for Medium and Low Frequency groups. Consider A/B testing messages tied to milestones or behavior-based rewards. If you're pushing to GitHub, you can:
-
-
-1.	Save this chart as q2_frequency_chart.png or similar
-2.	Add it to your repo in a /visuals folder
-3.	Reference it with a Markdown link in your README
-
-
-![image](https://github.com/user-attachments/assets/1c7f3d4f-8f6e-48a6-8361-365a6894b3f2)
